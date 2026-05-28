@@ -33,7 +33,8 @@ import {
   Camera,
   Upload,
   AlertTriangle,
-  Lock
+  Lock,
+  Download
 } from 'lucide-react';
 import { Student, Teacher, Announcement, CalendarEvent, LessonPlan } from './types';
 import { SchoolCrest } from './components/SchoolCrest';
@@ -1086,6 +1087,28 @@ export default function App() {
     setReportCommentFeedback("Report comment saved to pupil's official file!");
   };
 
+  const handleDownloadCSV = () => {
+    const headers = ["Name", "Grade", "Attendance Rate (%)"];
+    const rows = filteredStudents.map(student => [
+      student.name,
+      student.grade,
+      `${student.attendanceRate}%`
+    ]);
+    const csvContent = [headers, ...rows]
+      .map(row => row.map(val => `"${String(val).replace(/"/g, '""')}"`).join(','))
+      .join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `pupils_directory_${selectedGradeFilter.toLowerCase().replace(/\s+/g, '_')}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // --- Helper calculations ---
   const filteredStudents = students.filter(s => {
     const matchesSearch = s.name.toLowerCase().includes(studentSearch.toLowerCase()) || 
@@ -1847,6 +1870,14 @@ export default function App() {
                   className="bg-blue-950 text-white hover:bg-blue-900 text-xs font-semibold px-4 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm transition-all"
                 >
                   <UserPlus className="w-3.5 h-3.5 text-amber-500" /> Enroll New Pupil
+                </button>
+
+                <button 
+                  onClick={handleDownloadCSV}
+                  className="bg-emerald-600 hover:bg-emerald-750 text-white text-xs font-semibold px-4 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                  title="Download CSV export"
+                >
+                  <Download className="w-3.5 h-3.5 text-emerald-100" /> Download CSV
                 </button>
               </div>
 
