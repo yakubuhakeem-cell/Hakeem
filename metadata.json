@@ -1,0 +1,8 @@
+{
+  "name": "Saako Holy Child Academy Portal",
+  "description": "A modern, professional school portal with student records, attendance tracking, grades ledger, fees directory, and an AI-driven report comments and curriculum planner.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
