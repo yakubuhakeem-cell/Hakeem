@@ -4,7 +4,7 @@ export const INITIAL_ANNOUNCEMENTS: Announcement[] = [
   {
     id: 'ann-1',
     title: 'Inter-School Sports Competition',
-    content: 'We are pleased to announce that Saako Holy Child Academy will be competing in the Sunyani Zone Inter-School Athletics Competition. All selected pupils should attend regular training with Mr. Ernest Kofi. Holiness is our key to disciplined victory!',
+    content: 'We are pleased to announce that Saako Holy Child Academy will be competing in the Sawla Zone Inter-School Athletics Competition. All selected pupils should attend regular training with Mr. Ernest Kofi. Holiness is our key to disciplined victory!',
     date: '2026-05-25',
     category: 'Event',
     author: 'Principal Hakeem'

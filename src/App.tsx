@@ -334,9 +334,9 @@ export default function App() {
     name: "Saako Holy Child Academy",
     motto: "Holiness is our key",
     phone: "+233545029200",
-    email: "saakoholychild@gmail.com",
-    address: "Off Sawla-Wa Road, Sawla, Savannah Region, Ghana",
-    established: 2012,
+    email: "saakohca@gmail.com",
+    address: "Jelinkon road, Sawla, Savannah Region, Ghana",
+    established: 2003,
   };
 
   // --- Stats Calculations & Helpers ---

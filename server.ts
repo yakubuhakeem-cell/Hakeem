@@ -43,9 +43,9 @@ app.get("/api/school-info", (req, res) => {
     name: "Saako Holy Child Academy",
     motto: "Holiness is our key",
     phone: "+233545029200",
-    email: "saakoholychild@gmail.com",
-    address: "Off Sunyani-Berekum Road, Sunyani, Bono Region, Ghana",
-    established: 2012,
+    email: "saakohca@gmail.com",
+    address: "Jelinkon road, Sawla, Savannah Region, Ghana",
+    established: 2003,
     coreValues: ["Holiness", "Integrity", "Academic Excellence", "Self-discipline"],
   });
 });
